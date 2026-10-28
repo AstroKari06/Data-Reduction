@@ -6,9 +6,9 @@ from matplotlib import pyplot as plt
 folder = Path(r"C:\Users\karos\AppData\Roaming\ASIImg\2026-10-21_16_07_36Z")
 
 fits_files = (
-    list(folder.glob("*.fit"))
-    + list(folder.glob("*.fits"))
-    + list(folder.glob("*.fts"))
+    folder.glob("*.fit")
+    + folder.glob("*.fits")
+    + folder.glob("*.fts")
 )
 
 images = []
