@@ -8,8 +8,8 @@ folder = Path(r"C:\Users\karos\OneDrive\Desktop\Kari\Programowanie\Projekt\Histo
 # Master biasy
 
 bias_files = {
-    "0°C": folder + "average_bias_0.fits",
-    "10°C": folder + "average_bias_10.fits"
+    "0°C": folder / "average_bias_0.fits",
+    "15°C": folder / "average_bias_15.fits"
 }
 
 plt.figure(figsize=(10, 6))
@@ -39,12 +39,12 @@ plt.show()
 # Master darki
 
 dark_files = {
-    "0°C, 10 s": folder + "average_dark_10_0.fits",
-    "0°C, 1 s": folder + "average_dark_01_0.fits",
+    "0°C, 10 s": folder / "average_dark_10_0.fits",
+    "0°C, 1 s": folder / "average_dark_01_0.fits",
     
 
-    "15°C, 10 s": folder + "average_dark_10_15.fits",
-    "15°C, 1 s": folder + "average_dark_01_15.fits"
+    "15°C, 10 s": folder / "average_dark_10_15.fits",
+    "15°C, 1 s": folder / "average_dark_01_15.fits"
 }
 
 plt.figure(figsize=(12, 7))
