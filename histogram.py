@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from astropy.io import fits
 from pathlib import Path
 
-folder = Path(r"C:\Users\karos\OneDrive\Desktop\Kari\Programowanie\Projekt\Histogram")
+folder = Path(r"your_folder_path_here")  # Replace with your actual folder path
 
 # Master biasy
-
+# Make sure to replace the file names with the actual names of your master bias files
 bias_files = {
     "0C": folder / "average_bias_0.fits",
     "15C": folder / "average_bias_15.fits"
@@ -33,12 +33,12 @@ plt.title("Histogram master biasów dla różnych temperatur")
 plt.legend()
 plt.grid(alpha=0.3)
 plt.tight_layout()
-plt.savefig(folder / "histogram_master_bias.png", dpi=300)
+plt.savefig(folder / "histogram_master_bias.png", dpi=300) #dpi znaczy dots per inch, czyli ile pikseli przypada na cal. Im wyższa wartość dpi, tym lepsza jakość obrazu ale też większy rozmiar pliku. 300 dpi to standardowa wartość dla druku, natomiast 72 dpi jest wystarczające dla wyświetlania na ekranie.
 plt.show()
 
 
 # Master darki
-
+# Make sure to replace the file names with the actual names of your master dark files
 dark_files = {
     "0C, 10 s": folder / "average_dark_10_0.fits",
     "0C, 1 s": folder / "average_dark_01_0.fits",

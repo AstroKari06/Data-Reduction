@@ -9,7 +9,7 @@ fits_files = (
     folder.glob("*.fit")
     + folder.glob("*.fits")
     + folder.glob("*.fts")
-)
+) #sety od razu usuwają duplikaty, więc nie trzeba się martwić o powtarzające się pliki.
 
 images = []
 
@@ -18,7 +18,7 @@ for filename in fits_files:
         data = hdul[0].data
 
         if data is not None:
-            images.append(np.array(data, dtype=np.float64))
+            images.append(np.array(data, dtype=np.float64)) #np.float64 to typ danych zmiennoprzecinkowych o podwójnej precyzji, który pozwala na przechowywanie liczb rzeczywistych z większą dokładnością niż np. np.float32. Użycie tego typu danych jest istotne w przypadku obróbki obrazów astronomicznych, gdzie precyzja jest kluczowa dla analizy danych.
             print(f"Loaded: {filename.name}")
 
 print(f"Total images loaded: {len(images)}")
@@ -29,7 +29,7 @@ if not images:
 if not all(img.shape == images[0].shape for img in images):
     raise ValueError("FITS images have different dimensions.")
 
-average_image = np.mean(images, axis=0)
+average_image = np.mean(images, axis=0) #axis mówi o tym, wzdłuż której osi ma być obliczana średnia. W tym przypadku axis=0 oznacza, że średnia jest obliczana wzdłuż pierwszej osi (czyli dla każdego piksela w obrazie).
 
 print("Average image shape:", average_image.shape)
 
