@@ -2,13 +2,14 @@ from astropy.io import fits
 import numpy as np
 from pathlib import Path
 from matplotlib import pyplot as plt
+from itertools import chain
 
 folder = Path(r"/mnt/c/Data/Dark_bias/2026-10-21_15_52_42Z")
 
-fits_files = (
-    folder.glob("*.fit")
-    + folder.glob("*.fits")
-    + folder.glob("*.fts")
+fits_files = chain(
+    folder.glob("*.fit"),
+    folder.glob("*.fits"),
+    folder.glob("*.fts")
 ) #sety od razu usuwają duplikaty, więc nie trzeba się martwić o powtarzające się pliki.
 
 images = []
