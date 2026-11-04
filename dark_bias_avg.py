@@ -3,7 +3,7 @@ import numpy as np
 from pathlib import Path
 from matplotlib import pyplot as plt
 
-folder = Path(r"C:\Users\karos\AppData\Roaming\ASIImg\2026-10-21_16_07_36Z")
+folder = Path(r"/mnt/c/Data/Dark_bias/2026-10-21_15_52_42Z")
 
 fits_files = (
     folder.glob("*.fit")
